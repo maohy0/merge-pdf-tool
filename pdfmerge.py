@@ -10,7 +10,7 @@ A4_WIDTH_PT  = 595  # 210 mm
 A4_HEIGHT_PT = 842  # 297 mm
 
 # 目标合并成的文件名
-f = "certs.pdf"
+f = "xxx.pdf"
 
 def resize_page2a4(page: PageObject) -> PageObject:
     """
@@ -57,4 +57,5 @@ def merge_folder_pdfs(folder: Path, out_file: Path = Path(f)) -> None:
 if __name__ == "__main__":
     original_pdf = Path(f)
     original_pdf.unlink(missing_ok=True)  # 删除原来的pdf文件，防止套娃，看着有点类似删Linux的软连接的方法，missing_ok参数让程序找不到certs.pdf也不会报错
+
     merge_folder_pdfs(Path(__file__).parent)   # 默认脚本所在目录
